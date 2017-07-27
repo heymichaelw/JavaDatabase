@@ -1,6 +1,7 @@
 package application.helpers;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -23,5 +24,11 @@ public class DatabaseManager {
 
     public void dropTransactionsTable() throws SQLException{
         statement.executeUpdate("DROP TABLE IF EXISTS transactions");
+    }
+
+    public ResultSet findAll(String table) throws SQLException{
+        String formattedSQL = String.format("SELECT * FROM %s", table);
+        ResultSet rs = statement.executeQuery(formattedSQL);
+        return rs;
     }
 }
