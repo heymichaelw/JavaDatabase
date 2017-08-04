@@ -24,6 +24,8 @@ public class Main {
         }
     }
 
+
+
     public static void ATMMenu(DatabaseManager dbm) throws SQLException{
         boolean isOn = true;
         while (isOn){
@@ -43,11 +45,10 @@ public class Main {
                     String choice = scanner.next();
                     switch (choice.toUpperCase()){
                         case "Y":
-                            ATMMenu(dbm);
                             break;
                         case "N":
-                            isOn = false;
-                            break;
+                           isOn = false;
+                           break;
                     }
                     break;
                 case 2:
@@ -59,7 +60,6 @@ public class Main {
                     String otherChoice = scanner.next();
                     switch (otherChoice.toUpperCase()) {
                         case "Y":
-                            ATMMenu(dbm);
                             break;
                         case "N":
                             isOn = false;
@@ -77,7 +77,6 @@ public class Main {
                         String menuChoice = scanner.next();
                         switch (menuChoice.toUpperCase()) {
                             case "Y":
-                                ATMMenu(dbm);
                                 break;
                             case "N":
                                 isOn = false;
@@ -85,8 +84,8 @@ public class Main {
                         }
                     } else {
                         System.out.println("Sorry, you do not have enough in your account!");
-                        ATMMenu(dbm);
                     }
+                    break;
                 case 4:
                     isOn = false;
                     break;
